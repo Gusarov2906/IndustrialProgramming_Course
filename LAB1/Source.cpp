@@ -6,7 +6,10 @@ class Matrix
 {
 public:
 	~Matrix();
+	Matrix();
+	Matrix(const Matrix& obj);
 	Matrix(int Size_x, int Size_y);
+	void resize(int New_size_x, int New_size_y);
 	int getSize_x();
 	int getSize_y();
 	int** matrix;
@@ -15,6 +18,12 @@ private:
 	int size_x;
 	int size_y;
 };
+
+Matrix::Matrix()
+{
+	size_x = 0;
+	size_y = 0;
+}
 
 Matrix::Matrix(int Size_x, int Size_y)
 {
@@ -32,6 +41,28 @@ Matrix::~Matrix()
 	for (int i = 0; i < this->size_x;i++)
 		delete [] matrix[i];
 	delete [] matrix;
+}
+
+Matrix::Matrix(const Matrix& obj)
+{
+	this->size_x = obj.size_x;
+	this->size_y = obj.size_y;
+	this->matrix = new int*;
+	for (int i = 0; i < this->size_x; i++)
+	{
+		this->matrix[i] = obj.matrix[i];
+	}
+}
+
+void Matrix::resize(int New_size_x, int New_size_y)
+{
+	size_x = New_size_x;
+	size_y = New_size_y;
+	matrix = new int* [size_x];
+	for (int i = 0; i < size_x; i++)
+	{
+		matrix[i] = new int[size_y];
+	}
 }
 
 int Matrix::getSize_x()
@@ -168,8 +199,8 @@ int main()
 	/*Приведение матриц к требуемому размеру*/
 	while (l < n1 || l < n2 || l < m1 || l < m2)
 		l *= 2;
-	Matrix M3 = Matrix(l,l);
-	Matrix M4 = Matrix(l,l);
+	Matrix M3 = Matrix(l, l);
+	Matrix M4 = Matrix(l, l);
 	fillMatrixZero(M3);
 	fillMatrixZero(M4);
 	partiallyCopyMatrix(M3, M1, true);
@@ -179,74 +210,66 @@ int main()
 	showMatrix(M4, "Матрица 2");
 
 	/*Разбиение матриц на подматрицы и их заполнение*/
-	Matrix mat1 = Matrix(l / 2, l / 2);
-	Matrix mat2 = Matrix(l / 2, l / 2);
-	Matrix mat3 = Matrix(l / 2, l / 2);
-	Matrix mat4 = Matrix(l / 2, l / 2);
-	Matrix mat5 = Matrix(l / 2, l / 2);
-	Matrix mat6 = Matrix(l / 2, l / 2);
-	Matrix mat7 = Matrix(l / 2, l / 2);
-	Matrix mat8 = Matrix(l / 2, l / 2);
+	Matrix mat[8];
+	for (int i = 0; i < 8; i++)
+	{
+		mat[i].resize(l / 2, l / 2);
+	}
 
-	createPathMatrix(mat1, M3, l, 0, 0);
-	createPathMatrix(mat2, M3, l, 0, l / 2);
-	createPathMatrix(mat3, M3, l, l / 2, 0);
-	createPathMatrix(mat4, M3, l, l / 2, l / 2);
-	createPathMatrix(mat5, M4, l, 0, 0);
-	createPathMatrix(mat6, M4, l, 0, l / 2);
-	createPathMatrix(mat7, M4, l, l / 2, 0);
-	createPathMatrix(mat8, M4, l, l / 2, l / 2);
+	createPathMatrix(mat[0], M3, l, 0, 0);
+	createPathMatrix(mat[1], M3, l, 0, l / 2);
+	createPathMatrix(mat[2], M3, l, l / 2, 0);
+	createPathMatrix(mat[3], M3, l, l / 2, l / 2);
+	createPathMatrix(mat[4], M4, l, 0, 0);
+	createPathMatrix(mat[5], M4, l, 0, l / 2);
+	createPathMatrix(mat[6], M4, l, l / 2, 0);
+	createPathMatrix(mat[7], M4, l, l / 2, l / 2);
 
 	/*Создание промежуточных матриц*/
-	Matrix p1 = Matrix(l / 2, l / 2);
-	Matrix p2 = Matrix(l / 2, l / 2);
-	Matrix p3 = Matrix(l / 2, l / 2);
-	Matrix p4 = Matrix(l / 2, l / 2);
-	Matrix p5 = Matrix(l / 2, l / 2);
-	Matrix p6 = Matrix(l / 2, l / 2);
-	Matrix p7 = Matrix(l / 2, l / 2);
+	Matrix p [7];
+	for (int i = 0; i < 7; i++)
+	{
+		p[i].resize(l / 2, l / 2);
+	}
 
 	/*Вычисление значений промежуточных матриц*/
 	for (int i = 0; i < l / 2; i++)
 	{
 		for (int j = 0; j < l / 2; j++)
 		{
-			p1.matrix[i][j] = 0;
-			p2.matrix[i][j] = 0;
-			p3.matrix[i][j] = 0;
-			p4.matrix[i][j] = 0;
-			p5.matrix[i][j] = 0;
-			p6.matrix[i][j] = 0;
-			p7.matrix[i][j] = 0;
+			for (int k = 0; k < 7; k++)
+			{
+				p[k].matrix[i][j] = 0;
+			}
 
 			for (int z = 0; z < l / 2; z++)
 			{
-				p1.matrix[i][j] += (mat1.matrix[i][z] + mat4.matrix[i][z]) * (mat5.matrix[z][j] + mat8.matrix[z][j]);
-				p2.matrix[i][j] += (mat3.matrix[i][z] + mat4.matrix[i][z]) * mat5.matrix[z][j];
-				p3.matrix[i][j] += mat1.matrix[i][z] * (mat6.matrix[z][j] - mat8.matrix[z][j]);
-				p4.matrix[i][j] += mat4.matrix[i][z] * (mat7.matrix[z][j] - mat5.matrix[z][j]);
-				p5.matrix[i][j] += (mat1.matrix[i][z] + mat2.matrix[i][z]) * mat8.matrix[z][j];
-				p6.matrix[i][j] += (mat3.matrix[i][z] - mat1.matrix[i][z]) * (mat5.matrix[z][j] + mat6.matrix[z][j]);
-				p7.matrix[i][j] += (mat2.matrix[i][z] - mat4.matrix[i][z]) * (mat7.matrix[z][j] + mat8.matrix[z][j]);
+				p[0].matrix[i][j] += (mat[0].matrix[i][z] + mat[3].matrix[i][z]) * (mat[4].matrix[z][j] + mat[7].matrix[z][j]);
+				p[1].matrix[i][j] += (mat[2].matrix[i][z] + mat[3].matrix[i][z]) * mat[4].matrix[z][j];
+				p[2].matrix[i][j] += mat[0].matrix[i][z] * (mat[5].matrix[z][j] - mat[7].matrix[z][j]);
+				p[3].matrix[i][j] += mat[3].matrix[i][z] * (mat[6].matrix[z][j] - mat[4].matrix[z][j]);
+				p[4].matrix[i][j] += (mat[0].matrix[i][z] + mat[1].matrix[i][z]) * mat[7].matrix[z][j];
+				p[5].matrix[i][j] += (mat[2].matrix[i][z] - mat[0].matrix[i][z]) * (mat[4].matrix[z][j] + mat[5].matrix[z][j]);
+				p[6].matrix[i][j] += (mat[1].matrix[i][z] - mat[3].matrix[i][z]) * (mat[6].matrix[z][j] + mat[7].matrix[z][j]);
 			}
 		}
 	}
 
 	/*Создание вспомогательных матриц*/
-	Matrix mat9 = Matrix(l / 2, l / 2);
-	Matrix mat10 = Matrix(l / 2, l / 2);
-	Matrix mat11 = Matrix(l / 2, l / 2);
-	Matrix mat12 = Matrix(l / 2, l / 2);
-
+	Matrix mat1[4];
+	for (int i = 0; i < 4; i++)
+	{
+		mat1[i].resize(l / 2, l / 2);
+	}
 	/*Подсчет значений вспомогательных матриц из промежуточных*/
 	for (int i = 0; i < l / 2; i++)
 	{
 		for (int j = 0; j < l / 2; j++)
 		{
-			mat9.matrix[i][j] = p1.matrix[i][j] + p4.matrix[i][j] - p5.matrix[i][j] + p7.matrix[i][j];
-			mat10.matrix[i][j] = p3.matrix[i][j] + p5.matrix[i][j];
-			mat11.matrix[i][j] = p2.matrix[i][j] + p4.matrix[i][j];
-			mat12.matrix[i][j] = p1.matrix[i][j] - p2.matrix[i][j] + p3.matrix[i][j] + p6.matrix[i][j];
+			mat1[0].matrix[i][j] = p[0].matrix[i][j] + p[3].matrix[i][j] - p[4].matrix[i][j] + p[6].matrix[i][j];
+			mat1[1].matrix[i][j] = p[2].matrix[i][j] + p[4].matrix[i][j];
+			mat1[2].matrix[i][j] = p[1].matrix[i][j] + p[3].matrix[i][j];
+			mat1[3].matrix[i][j] = p[0].matrix[i][j] - p[1].matrix[i][j] + p[2].matrix[i][j] + p[5].matrix[i][j];
 		}
 	}
 
@@ -258,10 +281,10 @@ int main()
 	{
 		for (int j = 0; j < l / 2; j++)
 		{
-			M5.matrix[i][j] = mat9.matrix[i][j];
-			M5.matrix[i][j + l / 2] = mat10.matrix[i][j];
-			M5.matrix[i + l / 2][j] = mat11.matrix[i][j];
-			M5.matrix[i + l / 2][j + l / 2] = mat12.matrix[i][j];
+			M5.matrix[i][j] = mat1[0].matrix[i][j];
+			M5.matrix[i][j + l / 2] = mat1[1].matrix[i][j];
+			M5.matrix[i + l / 2][j] = mat1[2].matrix[i][j];
+			M5.matrix[i + l / 2][j + l / 2] = mat1[3].matrix[i][j];
 		}
 	}
 
@@ -298,6 +321,7 @@ int main()
 	/*Вывод результирующей матрицы*/
 	showMatrix(M6, "Результирующая матрица");
 
+	
 	system("pause");
 	return 0;
 }
