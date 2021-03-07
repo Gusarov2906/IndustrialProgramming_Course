@@ -7,7 +7,6 @@ class Matrix
 public:
 	~Matrix();
 	Matrix();
-	Matrix(const Matrix& obj);
 	Matrix(int Size_x, int Size_y);
 	void resize(int New_size_x, int New_size_y);
 	int getSize_x();
@@ -41,17 +40,6 @@ Matrix::~Matrix()
 	for (int i = 0; i < this->size_x;i++)
 		delete [] matrix[i];
 	delete [] matrix;
-}
-
-Matrix::Matrix(const Matrix& obj)
-{
-	this->size_x = obj.size_x;
-	this->size_y = obj.size_y;
-	this->matrix = new int*;
-	for (int i = 0; i < this->size_x; i++)
-	{
-		this->matrix[i] = obj.matrix[i];
-	}
 }
 
 void Matrix::resize(int New_size_x, int New_size_y)
@@ -161,26 +149,26 @@ void createPathMatrix(Matrix& path, Matrix& mainMatrix, int l, int offset_x, int
 int main()
 {
 	srand(time(NULL));
-	int n1, m1, n2, m2, k, l = 2;
+	int sizeX1, sizeY1, sizeX2, sizeY2, choice, l = 2;
 	system("chcp 1251");
 	std::cout << "Вас приветствует программа" << std::endl <<
 		"быстрого перемножения матриц методом Штрассена\n\n";
 
 	/*Ввод размеров матрицы пользователем*/
-	getValMatrixSize(n1, m1, "Введите размеры первой матрицы");
-	getValMatrixSize(n2, m2, "Введите размеры второй матрицы");
+	getValMatrixSize(sizeX1, sizeY1, "Введите размеры первой матрицы");
+	getValMatrixSize(sizeX2, sizeY2, "Введите размеры второй матрицы");
 
-	Matrix M1 = Matrix(n1, m1);
-	Matrix M2 = Matrix(n2, m2);
+	Matrix M1 = Matrix(sizeX1, sizeY1);
+	Matrix M2 = Matrix(sizeX2, sizeY2);
 
 	/*Выбор способа заполнения и заполнение матриц*/
 	do
 	{
 		std::cout << "Выберите способ заполнения матриц\n" <<
 			"1 - Вручную \n2 - Случайным образом\n";
-		std::cin >> k;
-	} while (k < 1 || k > 2);
-	switch (k)
+		std::cin >> choice;
+	} while (choice < 1 || choice > 2);
+	switch (choice)
 	{
 	case 1:
 		fillMatrixByKeyboard(M1);
@@ -197,7 +185,7 @@ int main()
 	}
 
 	/*Приведение матриц к требуемому размеру*/
-	while (l < n1 || l < n2 || l < m1 || l < m2)
+	while (l < sizeX1 || l < sizeX2 || l < sizeY1 || l < sizeY2)
 		l *= 2;
 	Matrix M3 = Matrix(l, l);
 	Matrix M4 = Matrix(l, l);
@@ -321,7 +309,6 @@ int main()
 	/*Вывод результирующей матрицы*/
 	showMatrix(M6, "Результирующая матрица");
 
-	
 	system("pause");
 	return 0;
 }

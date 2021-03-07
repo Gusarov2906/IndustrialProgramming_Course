@@ -947,7 +947,7 @@
        Переопределение целевого объекта "ComputeMetaGenInputs" в проекте "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.MetaGen.targets" целевым объект "ComputeMetaGenInputs" из проекта "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets".
        Переопределение целевого объекта "GetNativeManifest" в проекте "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" целевым объект "GetNativeManifest" из проекта "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppCommon.targets".
        Переопределение целевого объекта "GetTargetPathWithTargetPlatformMoniker" в проекте "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Microsoft.Common.CurrentVersion.targets" целевым объект "GetTargetPathWithTargetPlatformMoniker" из проекта "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets".
-Сборка начата 12.02.2021 18:34:33.
+Сборка начата 12.02.2021 20:37:40.
 Уровень детализации журнала: Detailed.     1>Проект "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\lab1.vcxproj" в узле 2 (целевые объекты Build).
      1>Сборка с инструментами версии "Current".
        Целевой объект "EnableIntermediateOutputPathMismatchWarning" пропущен из-за невыполненного условия; выражение ('$(RestoreProjectStyle)' == 'PackageReference') равно ('' == 'PackageReference').
@@ -971,10 +971,10 @@
      1>Целевой объект "SetTelemetryEnvironmentVariables" в файле "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Cpp.DesignTime.targets" из проекта "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\lab1.vcxproj" (целевой объект "Build" зависит от него):
        Используется задача "SetEnv" из сборки "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.Build.CppTasks.Common.dll".
        Задача "SetEnv"
-         VSTEL_SolutionSessionID={6DE0B045-1E18-4D10-8B53-FAD755E48DB3}
+         VSTEL_SolutionSessionID={ADA27AA3-9692-40F3-9632-71EB6783422E}
        Выполнение задачи "SetEnv" завершено.
        Задача "SetEnv"
-         VSTEL_CurrentSolutionBuildID=2531337362
+         VSTEL_CurrentSolutionBuildID=2538723808
        Выполнение задачи "SetEnv" завершено.
        Задача "SetEnv"
          VSTEL_ProjectID={FA3EC631-0832-437A-A8F2-90A6798D9CB1}
@@ -1268,18 +1268,18 @@
          	x64\Debug\lab1.tlog\CL.read.1.tlog
          Выходные данные для E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\SOURCE.CPP:
          	E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\LAB1\X64\DEBUG\SOURCE.OBJ
-         Будет выполнена компиляция исходного кода "..\Source.cpp", так как E:\Лабы\ПППП\PPPP\PPPP\LAB1\Source.cpp изменено в 12.02.2021 18:34:30.
+         Будет выполнена компиляция исходного кода "..\Source.cpp", так как E:\Лабы\ПППП\PPPP\PPPP\LAB1\Source.cpp изменено в 12.02.2021 20:37:38.
          Выходные данные для E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\SOURCE.CPP:
          	E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\LAB1\X64\DEBUG\SOURCE.OBJ
          Журналы отслеживания записи:
          	x64\Debug\lab1.tlog\CL.write.1.tlog
          Переменные окружения переданы инструменту:
-           VS_UNICODE_OUTPUT=1744
+           VS_UNICODE_OUTPUT=2028
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64\CL.exe /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc142.pdb" /Gd /TP /FC /errorReport:prompt ..\Source.cpp
          Команда отслеживания:
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\x64\Debug\lab1.tlog" /r "E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\SOURCE.CPP" /b MSBuildConsole_CancelEvent18ccf28cf99f43ff915ee166fa6c4e3a  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc142.pdb" /Gd /TP /FC /errorReport:prompt ..\Source.cpp
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\x64\Debug\lab1.tlog" /r "E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\SOURCE.CPP" /b MSBuildConsole_CancelEvent9a35094266d0450da50f9577e47b27af  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64\CL.exe"  /c /ZI /JMC /nologo /W3 /WX- /diagnostics:column /sdl /Od /D _DEBUG /D _CONSOLE /D _UNICODE /D UNICODE /Gm- /EHsc /RTC1 /MDd /GS /fp:precise /permissive- /Zc:wchar_t /Zc:forScope /Zc:inline /Fo"x64\Debug\\" /Fd"x64\Debug\vc142.pdb" /Gd /TP /FC /errorReport:prompt ..\Source.cpp
          Source.cpp
-     1>E:\Лабы\ПППП\PPPP\PPPP\LAB1\Source.cpp(163,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+     1>E:\Лабы\ПППП\PPPP\PPPP\LAB1\Source.cpp(151,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
        Выполнение задачи "CL" завершено.
      1>Сборка целевого объекта "ClCompile" в проекте "lab1.vcxproj" завершена.
        Целевой объект "RunSelectedFileNativeCodeAnalysis" пропущен из-за невыполненного условия; выражение ('$(RunMsvcAnalysis)'=='true' and '$(SelectedFiles)'!='') равно ('false'=='true' and ''!='').
@@ -1425,10 +1425,10 @@
          	C:\PROGRAM FILES (X86)\MICROSOFT VISUAL STUDIO\2019\COMMUNITY\VC\TOOLS\MSVC\14.28.29333\BIN\HOSTX86\X64\MSPDBSRV.EXE
          Требуется компиляция исходного кода: входные данные E:\Лабы\ПППП\PPPP\PPPP\LAB1\LAB1\X64\DEBUG\SOURCE.OBJ обновились по сравнению с выходными E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\X64\DEBUG\LAB1.PDB.
          Переменные окружения переданы инструменту:
-           VS_UNICODE_OUTPUT=1232
+           VS_UNICODE_OUTPUT=1272
          C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64\link.exe /ERRORREPORT:PROMPT /OUT:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.lib" /MACHINE:X64 x64\Debug\Source.obj
          Команда отслеживания:
-         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\x64\Debug\lab1.tlog" /r "E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\LAB1\X64\DEBUG\SOURCE.OBJ" /b MSBuildConsole_CancelEventaf2582dcb6924c79a900b55abb784c4d  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.lib" /MACHINE:X64 x64\Debug\Source.obj
+         C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Current\Bin\Tracker.exe /a /d "C:\Program Files (x86)\MSBuild\15.0\FileTracker\FileTracker32.dll" /i "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\x64\Debug\lab1.tlog" /r "E:\ЛАБЫ\ПППП\PPPP\PPPP\LAB1\LAB1\X64\DEBUG\SOURCE.OBJ" /b MSBuildConsole_CancelEvent91d5f3afad86493aa7def5fdba272f1e  /c "C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\VC\Tools\MSVC\14.28.29333\bin\HostX86\x64\link.exe"  /ERRORREPORT:PROMPT /OUT:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.exe" /INCREMENTAL /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /manifest:embed /DEBUG:FASTLINK /PDB:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.pdb" /SUBSYSTEM:CONSOLE /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.lib" /MACHINE:X64 x64\Debug\Source.obj
        Выполнение задачи "Link" завершено.
        Задача "Message"
          lab1.vcxproj -> E:\Лабы\ПППП\PPPP\PPPP\LAB1\x64\Debug\lab1.exe
@@ -1652,7 +1652,7 @@
 
        "E:\Лабы\ПППП\PPPP\PPPP\LAB1\lab1\lab1.vcxproj" (целевой объект Build ) (1) ->
        (Целевой объект ClCompile) -> 
-         E:\Лабы\ПППП\PPPP\PPPP\LAB1\Source.cpp(163,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+         E:\Лабы\ПППП\PPPP\PPPP\LAB1\Source.cpp(151,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
 
     Предупреждений: 1
     Ошибок: 0
